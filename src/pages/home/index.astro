@@ -1,6 +1,11 @@
 ---
 import "../../styles/global.css";
-import Layout from "../../layouts/Layout.astro";
+import Layout from "../../layouts/layout.astro";
+import { Button } from "@/components/ui/button";
+import { getCollection } from "astro:content";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+
+const projectsData = await getCollection("projects");
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
@@ -9,7 +14,71 @@ import Layout from "../../layouts/Layout.astro";
 <Layout>
   <section>
     <div class="container mx-auto px-4">
-      <h1 class="text-2xl font-bold text-green-500">Nadir Yusifov</h1>
+      <div class="flex h-dvh flex-col items-center justify-center space-y-5">
+        <article>
+          <h1 class="text-center text-4xl font-bold">
+            Mən Nadir Yusifov, <span class="text-olive-500"
+              >Frontend Developer</span
+            >
+          </h1>
+        </article>
+        <Button className="cursor-pointer text-lg" variant="outline" size="lg"
+          >CV-mi yüklə</Button
+        >
+      </div>
+
+      <div class="my-20">
+        <article class="pb-5">
+          <h3 class="text-lg">Layihələr</h3>
+        </article>
+        <div class="flex gap-5">
+          {
+            projectsData.map((project) => (
+              <Card className="h-40 w-95 border hover:bg-muted border-border bg-transparent px-4 py-2 hover:shadow-lg transition-all duration-100 ease-in-out">
+                <CardHeader>
+                  <CardTitle className="pb-3 text-lg font-medium text-olive-500">
+                    {project.data.title}
+                  </CardTitle>
+                  <CardContent>
+                    <p class="text-[1rem] text-neutral-700">
+                      {project.data.description}
+                    </p>
+
+                    <div class="flex items-end justify-end gap-x-5 pt-3">
+                      <a
+                        class={
+                          project.data.links.github
+                            ? "block underline underline-offset-4 text-[1rem]"
+                            : "hidden"
+                        }
+                        href={project.data.links.github}
+                      >
+                        Github
+                      </a>
+                      <a
+                        class={
+                          project.data.links.demo
+                            ? "block underline underline-offset-4 text-[1rem]"
+                            : "hidden"
+                        }
+                        href={project.data.links.demo}
+                      >
+                        Demo
+                      </a>
+                    </div>
+                  </CardContent>
+                </CardHeader>
+              </Card>
+            ))
+          }
+        </div>
+      </div>
+
+      <!-- <div>
+        <article>
+          <h3>Təhsilim</h3>
+        </article>
+      </div> -->
     </div>
   </section>
 </Layout>
