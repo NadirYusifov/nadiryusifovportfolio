@@ -1,0 +1,20 @@
+[
+    {
+        "id": "1",
+        "title": "azerbaijan-map",
+        "description": "This is Interactive map of Azerbijan.",
+        "links": {
+            "github": "https://github.com/NadirYusifov/azerbaijan-map",
+            "demo": "https://azerbaijanmap.netlify.app/"
+        }
+    },
+    {
+        "id": "2",
+        "title": "qr-code-react",
+        "description": "QR Code Generate. ",
+        "links": {
+            "github": "https://github.com/NadirYusifov/qr-code-react",
+            "demo": "https://qr-code-vitereact.netlify.app/"
+        }
+    }
+]
