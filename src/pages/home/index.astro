@@ -3,7 +3,13 @@ import "../../styles/global.css";
 import Layout from "../../layouts/layout.astro";
 import { Button } from "@/components/ui/button";
 import { getCollection } from "astro:content";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 
 const projectsData = await getCollection("projects");
 
@@ -22,62 +28,99 @@ const projectsData = await getCollection("projects");
             >
           </h1>
         </article>
-        <Button className="cursor-pointer text-lg" variant="outline" size="lg"
-          >CV-mi yüklə</Button
+        <Button
+          className="transtion-all cursor-pointer text-lg duration-200 ease-in-out hover:-translate-y-1 hover:shadow-lg"
+          variant="outline"
+          size="lg">CV-mi yüklə</Button
         >
       </div>
 
-      <div class="my-20">
+      <div class="mb-50">
         <article class="pb-5">
-          <h3 class="text-lg">Layihələr</h3>
+          <h3 class="text-xl">Layihələr</h3>
         </article>
         <div class="flex gap-5">
           {
             projectsData.map((project) => (
-              <Card className="h-40 w-95 border hover:bg-muted border-border bg-transparent px-4 py-2 hover:shadow-lg transition-all duration-100 ease-in-out">
+              <Card className="w-95 border hover:bg-muted border-border bg-transparent px-4 py-2 hover:-translate-y-1 hover:shadow-lg transition-all duration-200 ease-in-out">
                 <CardHeader>
-                  <CardTitle className="pb-3 text-lg font-medium text-olive-500">
+                  <CardTitle className="text-lg font-medium text-olive-500">
                     {project.data.title}
                   </CardTitle>
-                  <CardContent>
-                    <p class="text-[1rem] text-neutral-700">
-                      {project.data.description}
-                    </p>
-
-                    <div class="flex items-end justify-end gap-x-5 pt-3">
-                      <a
-                        class={
-                          project.data.links.github
-                            ? "block underline underline-offset-4 text-[1rem]"
-                            : "hidden"
-                        }
-                        href={project.data.links.github}
-                      >
-                        Github
-                      </a>
-                      <a
-                        class={
-                          project.data.links.demo
-                            ? "block underline underline-offset-4 text-[1rem]"
-                            : "hidden"
-                        }
-                        href={project.data.links.demo}
-                      >
-                        Demo
-                      </a>
-                    </div>
-                  </CardContent>
                 </CardHeader>
+                <CardContent>
+                  <p class="text-[1rem] text-neutral-700">
+                    {project.data.description}
+                  </p>
+                </CardContent>
+                <CardFooter className="flex items-end justify-end gap-x-5">
+                  <a
+                    class={
+                      project.data.links.github
+                        ? "block text-[1rem] underline underline-offset-4"
+                        : "hidden"
+                    }
+                    href={project.data.links.github}
+                  >
+                    Github
+                  </a>
+                  <a
+                    class={
+                      project.data.links.demo
+                        ? "block text-[1rem] underline underline-offset-4"
+                        : "hidden"
+                    }
+                    href={project.data.links.demo}
+                  >
+                    Demo
+                  </a>
+                </CardFooter>
               </Card>
             ))
           }
         </div>
       </div>
 
-      <!-- <div>
-        <article>
-          <h3>Təhsilim</h3>
+      <div class="mb-50">
+        <article class="pb-5">
+          <h3 class="text-xl">Təhsilim</h3>
         </article>
+
+        <article class="flex flex-col">
+          <h4 class="text-lg">Bakı Dövlət Universiteti</h4>
+          <p>İxtisas: Fəlsəfə</p>
+          <p>Təhsil pilləsi: Bakalavr</p>
+          <span class="text-olive-500">2021/2022 ‒ 2025</span>
+        </article>
+      </div>
+
+      <div class="mb-50">
+        <article class="pb-5">
+          <h3 class="text-xl">Kurslar</h3>
+        </article>
+        <div class="flex gap-x-5">
+          <article>
+            <h4>IT Brains Academy</h4>
+            <p>Frontend Developer</p>
+            <span class="text-olive-500">Year</span>
+          </article>
+          <span class="border border-olive-500"></span>
+          <article>
+            <h3>JET Academy</h3>
+            <p>Frontend Developer</p>
+            <span class="text-olive-500">Year</span>
+          </article>
+        </div>
+      </div>
+
+      <!-- <div class="mb-50">
+        <article class="pb-5">
+          <h3 class="text-xl">İş təcrübəm</h3>
+        </article>
+
+        <div class="flex gap-x-5">
+          <article>Karyre</article>
+        </div>
       </div> -->
     </div>
   </section>
