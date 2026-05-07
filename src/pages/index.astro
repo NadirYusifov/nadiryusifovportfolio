@@ -1,0 +1,144 @@
+---
+import "../styles/global.css";
+import Layout from "../layouts/layout.astro";
+import { Button } from "@/components/ui/button";
+import { getCollection } from "astro:content";
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import MyCV from "../assets/NadirYusifovCV.pdf";
+
+const projectsData = await getCollection("projects");
+
+// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
+// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+---
+
+<Layout>
+  <section>
+    <div class="container mx-auto px-4">
+      <div class="flex h-dvh flex-col items-center justify-center space-y-5">
+        <article class="relative">
+          <h1 class="relative text-center text-4xl font-bold">
+            Mən Nadir Yusifov, <span class="relative text-olive-500"
+              >Frontend Developer</span
+            >
+          </h1>
+        </article>
+        <a href={MyCV} download>
+          <Button
+            className="transtion-all cursor-pointer text-lg duration-200 ease-in-out hover:-translate-y-1 hover:shadow-lg"
+            variant="outline"
+            size="lg"
+            type="button">CV-mi yüklə</Button
+          >
+        </a>
+      </div>
+
+      <div id="projects" class="mb-50">
+        <article class="pb-5">
+          <h3 class="text-xl">Layihələr</h3>
+        </article>
+        <div class="flex gap-5">
+          {
+            projectsData.map((project) => (
+              <Card className="w-95 border hover:bg-muted border-border bg-transparent px-4 py-2 hover:-translate-y-1 hover:shadow-lg transition-all duration-200 ease-in-out">
+                <CardHeader>
+                  <CardTitle className="text-lg font-medium text-olive-500">
+                    {project.data.title}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p class="text-[1rem] text-neutral-700">
+                    {project.data.description}
+                  </p>
+                </CardContent>
+                <CardFooter className="flex items-end justify-end gap-x-5">
+                  <a
+                    class={
+                      project.data.links.github
+                        ? "block text-[1rem] underline underline-offset-4"
+                        : "hidden"
+                    }
+                    href={project.data.links.github}
+                  >
+                    Github
+                  </a>
+                  <a
+                    class={
+                      project.data.links.demo
+                        ? "block text-[1rem] underline underline-offset-4"
+                        : "hidden"
+                    }
+                    href={project.data.links.demo}
+                  >
+                    Demo
+                  </a>
+                </CardFooter>
+              </Card>
+            ))
+          }
+        </div>
+      </div>
+
+      <div class="mb-50">
+        <article class="pb-5">
+          <h3 class="text-xl">Təhsilim</h3>
+        </article>
+
+        <article class="flex flex-col">
+          <h4 class="text-lg font-medium">Bakı Dövlət Universiteti</h4>
+          <p>İxtisas: Fəlsəfə</p>
+          <p>Təhsil pilləsi: Bakalavr</p>
+          <span class="text-olive-500">2021/2022 ‒ 2025</span>
+        </article>
+      </div>
+
+      <div class="mb-50">
+        <article class="pb-5">
+          <h3 class="text-xl">Kurslar</h3>
+        </article>
+        <div class="flex gap-x-10">
+          <article>
+            <h4 class="text-lg font-medium">IT Brains Academy</h4>
+            <p>Frontend Developer</p>
+            <span class="text-olive-500">İyul 2023 ‒ Yanvar 2024</span>
+          </article>
+          <span class="border-x border-olive-500"></span>
+          <article>
+            <h3 class="text-lg font-medium">JET Academy</h3>
+            <p>Frontend Developer</p>
+            <span class="text-olive-500">Avqust 2024 ‒ Noyabr 2024</span>
+          </article>
+        </div>
+      </div>
+
+      <div class="mb-50">
+        <article class="pb-5">
+          <h3 class="text-xl">İş təcrübəm</h3>
+        </article>
+
+        <div class="flex gap-x-10">
+          <article>
+            <h3 class="text-lg font-medium">Karyera Z</h3>
+            <p>Frontend Developer olaraq çalışmışam.</p>
+            <span class="text-olive-500">Sentyabr 2024 ‒ Dekabr 2024</span>
+          </article>
+          <span class="border-x border-olive-500"></span>
+          <article>
+            <h3 class="text-lg font-medium">Food2</h3>
+            <p>
+              Food2 layihəsində Partnership səhifəsinə və tərcümə hisssəsini
+              hazırladım.
+            </p>
+            <span class="text-olive-500">Noyabr 2025 ‒ Davam edir</span>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
