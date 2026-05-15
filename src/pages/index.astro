@@ -12,6 +12,7 @@ import {
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ArrowDown, Pin } from "@lucide/astro";
+import Location from "@/components/location.astro";
 
 const projectsData = await getCollection("projects");
 
@@ -25,27 +26,10 @@ const projectsData = await getCollection("projects");
     <div class="bg-[url(src/assets/ttten.svg)] bg-no-repeat">
       <div class="container mx-auto px-4">
         <div
-          class="relative flex h-dvh w-full flex-col items-center justify-center space-y-10"
+          class="relative flex h-dvh w-full flex-col items-center justify-center"
         >
-          <div class="relative mb-20">
-            <Badge
-              className="text-md relative rotate-1 bg-olive-200 py-3 pl-4 text-olive-500"
-              >Bakı, Azərbaycan</Badge
-            >
-            <span class="absolute -inset-5 -left-2 z-10">
-              <Pin
-                class="-rotate-14"
-                data-icon="inline-start"
-                fill="white"
-                size={30}
-              />
-            </span>
-            <div class="absolute inset-1 translate-x-0 translate-y-1 -skew-x-5">
-              <hr class="absolute mb-3 w-3 -rotate-45 border-black/30" />
-              <hr class="absolute w-3 rotate-45 border-black/30" />
-            </div>
-          </div>
-          <article class="flex flex-col items-center">
+          <Location />
+          <article class="mb-10 flex flex-col items-center">
             <h1 class="text-center text-4xl font-bold">
               Mən Nadir Yusifov,
               <span
@@ -55,14 +39,24 @@ const projectsData = await getCollection("projects");
               </span>
             </h1>
           </article>
-          <a href="/NadirYusifov.pdf" download>
-            <Button
-              className="transtion-all cursor-pointer text-lg duration-200 ease-in-out hover:-translate-y-1 hover:shadow-lg"
-              variant="outline"
-              size="lg"
-              type="button">CV-mi yüklə</Button
-            >
-          </a>
+          <div class="flex gap-x-5">
+            <a href="/NadirYusifov.pdf" download>
+              <Button
+                className="transtion-all cursor-pointer text-lg duration-200 ease-in-out hover:-translate-y-1 hover:shadow-lg"
+                variant="outline"
+                size="lg"
+                type="button">CV-mi yüklə</Button
+              >
+            </a>
+            <a href="mailto:nadiryusifov70@gmail.com">
+              <Button
+                className="transtion-all cursor-pointer text-lg duration-200 ease-in-out hover:-translate-y-1 hover:shadow-lg"
+                variant="outline"
+                size="lg"
+                type="button">Maildən yaz</Button
+              >
+            </a>
+          </div>
           <div class="mt-20">
             <ArrowDown class="animate-bounce text-olive-500" />
           </div>
@@ -72,10 +66,10 @@ const projectsData = await getCollection("projects");
           <article class="pb-5">
             <h3 class="text-xl">Layihələr</h3>
           </article>
-          <div class="flex gap-5">
+          <div class="flex flex-col gap-y-5 lg:flex-row lg:gap-x-5">
             {
               projectsData.map((project) => (
-                <Card className="w-95 border hover:bg-muted border-border bg-transparent px-4 py-2 hover:-translate-y-1 hover:shadow-lg transition-all duration-200 ease-in-out">
+                <Card className="w-full lg:w-95 border hover:bg-muted border-border bg-transparent px-4 py-2 hover:-translate-y-1 hover:shadow-lg transition-all duration-200 ease-in-out">
                   <CardHeader>
                     <CardTitle className="text-lg font-medium text-olive-500">
                       {project.data.title}
@@ -95,7 +89,7 @@ const projectsData = await getCollection("projects");
                       }
                       href={project.data.links.github}
                     >
-                      Github
+                      GitHub
                     </a>
                     <a
                       class={
@@ -118,22 +112,31 @@ const projectsData = await getCollection("projects");
           <article class="pb-5">
             <h3 class="text-xl">İş təcrübəm</h3>
           </article>
+          <div class="flex flex-col space-y-5 gap-x-10">
+            <div
+              class="flex items-center gap-x-5 transition-all ease-in-out hover:translate-x-1"
+            >
+              <span class="border-border border p-3">01</span>
+              <article>
+                <a href="#" class="text-xl font-medium">Karyera Z</a>
+                <p class="text-lg">Frontend Developer olaraq çalışmışam.</p>
+                <span class="text-olive-500">Sentyabr 2024 ‒ Dekabr 2024</span>
+              </article>
+            </div>
 
-          <div class="flex gap-x-10">
-            <article>
-              <h3 class="text-lg font-medium">Karyera Z</h3>
-              <p>Frontend Developer olaraq çalışmışam.</p>
-              <span class="text-olive-500">Sentyabr 2024 ‒ Dekabr 2024</span>
-            </article>
-            <span class="border-x border-olive-500"></span>
-            <article>
-              <h3 class="text-lg font-medium">Food2</h3>
-              <p>
-                Food2 layihəsində Partnership səhifəsinə və tərcümə hisssəsini
-                hazırladım.
-              </p>
-              <span class="text-olive-500">Noyabr 2025 ‒ Davam edir</span>
-            </article>
+            <div
+              class="flex items-center gap-x-5 transition-all ease-in-out hover:translate-x-1"
+            >
+              <span class="border-border border p-3">02</span>
+              <article>
+                <a href="#" class="text-xl font-medium">Food2</a>
+                <p class="text-lg">
+                  Food2 layihəsində Partnership səhifəsinə və tərcümə hisssəsini
+                  hazırladım.
+                </p>
+                <span class="text-olive-500">Noyabr 2025 ‒ Davam edir</span>
+              </article>
+            </div>
           </div>
         </div>
       </div>
