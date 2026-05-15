@@ -10,7 +10,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "allwrite": "prettier . --write"
+    "allcleanwrite": "prettier . --write"
   },
   "dependencies": {
     "@astrojs/react": "^5.0.4",
