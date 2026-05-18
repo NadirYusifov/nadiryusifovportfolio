@@ -1,26 +1,17 @@
 ---
 import "../styles/global.css";
+import { ArrowDown } from "@lucide/astro";
 import Layout from "../layouts/layout.astro";
 import { Button } from "@/components/ui/button";
-import { getCollection } from "astro:content";
-import {
-  Card,
-  CardContent,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { ArrowDown, Pin } from "@lucide/astro";
-import Location from "@/components/location.astro";
-
-const projectsData = await getCollection("projects");
+import Location from "@/components/other/location.astro";
+import { OtherLink } from "@/layouts/otherLinks/otherLink";
+import ProjectsCard from "@/components/other/projectsCard.astro";
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
-<!-- https://tailwindcss.com/docs/hover-focus-and-other-states#before-and-after --- Highlights effect --><!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/hr --- hr tag style -->
+<!-- https://tailwindcss.com/docs/hover-focus-and-other-states#before-and-after --- Highlights effect --><!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/hr --- hr tag style --><!-- https://stackblitz.com/edit/github-q2hjvn-2ow4sj?file=src%2Fpages%2Findex.astro & https://github.com/withastro/astro/issues/8835 Astro shadcn/ui library causes errors  -->
 <Layout>
   <section>
     <div class="bg-[url(src/assets/ttten.svg)] bg-no-repeat">
@@ -62,84 +53,37 @@ const projectsData = await getCollection("projects");
           </div>
         </div>
 
-        <div id="projects" class="mb-50">
+        <div id="projects" class="mb-50 h-dvh scroll-mt-40">
           <article class="pb-5">
             <h3 class="text-xl">Layihələr</h3>
           </article>
-          <div class="flex flex-col gap-y-5 lg:flex-row lg:gap-x-5">
-            {
-              projectsData.map((project) => (
-                <Card className="w-full lg:w-95 border hover:bg-muted border-border bg-transparent px-4 py-2 hover:-translate-y-1 hover:shadow-lg transition-all duration-200 ease-in-out">
-                  <CardHeader>
-                    <CardTitle className="text-lg font-medium text-olive-500">
-                      {project.data.title}
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p class="text-[1rem] text-neutral-700">
-                      {project.data.description}
-                    </p>
-                  </CardContent>
-                  <CardFooter className="flex items-end justify-end gap-x-5">
-                    <a
-                      class={
-                        project.data.links.github
-                          ? "block text-[1rem] underline underline-offset-4"
-                          : "hidden"
-                      }
-                      href={project.data.links.github}
-                    >
-                      GitHub
-                    </a>
-                    <a
-                      class={
-                        project.data.links.demo
-                          ? "block text-[1rem] underline underline-offset-4"
-                          : "hidden"
-                      }
-                      href={project.data.links.demo}
-                    >
-                      Demo
-                    </a>
-                  </CardFooter>
-                </Card>
-              ))
-            }
-          </div>
+          <ProjectsCard />
         </div>
 
-        <div class="mb-50">
+        <div id="experience" class="mb-50 scroll-mt-40">
           <article class="pb-5">
             <h3 class="text-xl">İş təcrübəm</h3>
           </article>
-          <div class="flex flex-col space-y-5 gap-x-10">
-            <div
-              class="flex items-center gap-x-5 transition-all ease-in-out hover:translate-x-1"
-            >
-              <span class="border-border border p-3">01</span>
-              <article>
-                <a href="#" class="text-xl font-medium">Karyera Z</a>
-                <p class="text-lg">Frontend Developer olaraq çalışmışam.</p>
-                <span class="text-olive-500">Sentyabr 2024 ‒ Dekabr 2024</span>
-              </article>
-            </div>
-
-            <div
-              class="flex items-center gap-x-5 transition-all ease-in-out hover:translate-x-1"
-            >
-              <span class="border-border border p-3">02</span>
-              <article>
+          <div class="gap-x-10">
+            <ul class="space-y-5 marker:bg-olive-500">
+              <li class="transition-all ease-in-out hover:translate-x-1">
                 <a href="#" class="text-xl font-medium">Food2</a>
                 <p class="text-lg">
                   Food2 layihəsində Partnership səhifəsinə və tərcümə hisssəsini
                   hazırladım.
                 </p>
                 <span class="text-olive-500">Noyabr 2025 ‒ Davam edir</span>
-              </article>
-            </div>
+              </li>
+              <li class="transition-all ease-in-out hover:translate-x-1">
+                <a href="#" class="text-xl font-medium">Karyera Z</a>
+                <p class="text-lg">Frontend Developer olaraq çalışmışam.</p>
+                <span class="text-olive-500">Sentyabr 2024 ‒ Dekabr 2024</span>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
     </div>
   </section>
+  <OtherLink client:visible />
 </Layout>
