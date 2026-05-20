@@ -9,12 +9,13 @@ import {
 } from "../ui/card";
 
 const projectsData = await getCollection("projects");
+
 ---
 
 <div class="flex flex-col gap-y-5 lg:flex-row lg:gap-x-5">
   {
     projectsData.map((project) => (
-      <Card className="hover:bg-muted border-border w-full border bg-transparent px-4 py-2 transition-all duration-200 ease-in-out hover:-translate-y-1 hover:shadow-lg lg:w-95">
+      <Card data-id={project.data.id} className="hover:bg-muted border-border w-full border bg-transparent px-4 py-2 transition-all duration-200 ease-in-out hover:-translate-y-1 hover:shadow-lg lg:w-95">
         <CardHeader>
           <CardTitle className="text-lg font-medium text-olive-500">
             {project.data.title}
@@ -49,3 +50,19 @@ const projectsData = await getCollection("projects");
     ))
   }
 </div>
+
+<!-- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random -- Math.random() -->
+<!-- https://www.w3schools.com/jsref/prop_style_transform.asp -- style.transform -->
+
+<script type="module" is:inline>
+
+  const cardread = document.querySelectorAll('[data-id]')
+  // console.log(cardread);
+  cardread.forEach((card) => {
+    localStorage.setItem(card.dataset.id, String(Math.round(Math.random() * (4- -4) + -4)))
+    let getvalue = localStorage.getItem(card.dataset.id)
+    let convertNumber = Number(getvalue)
+    card.style.transform = `rotate(${convertNumber}deg)`
+  })
+  
+</script>
