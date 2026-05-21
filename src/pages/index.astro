@@ -4,7 +4,7 @@ import { ArrowDown } from "@lucide/astro";
 import Layout from "../layouts/layout.astro";
 import { Button } from "@/components/ui/button";
 import Location from "@/components/other/location.astro";
-import { OtherLink } from "@/layouts/otherLinks/otherLink";
+import { OtherLink } from "@/layouts/otherLinks/otherLinks";
 import ProjectsCard from "@/components/other/projectsCard.astro";
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
@@ -16,18 +16,19 @@ import ProjectsCard from "@/components/other/projectsCard.astro";
   <section>
     <div class="bg-[url(src/assets/ttten.svg)] bg-no-repeat">
       <div class="container mx-auto px-4">
-        <div
-          class="relative flex h-dvh w-full flex-col items-center justify-center"
-        >
+        <div class="flex h-dvh w-full flex-col items-center justify-center">
           <Location />
           <article class="mb-10 flex flex-col items-center">
-            <h1 class="text-center text-4xl font-bold">
-              Mən Nadir Yusifov,
-              <span
-                class="relative inline-block before:absolute before:-inset-1 before:block before:-skew-x-2 before:-skew-y-2 before:bg-olive-200"
-              >
-                <span class="relative text-olive-500">Frontend Developer</span>
-              </span>
+            <h1 class="text-center text-5xl">
+              <b>
+                Mən Nadir Yusifov,
+                <span
+                  class="relative inline-block before:absolute before:-inset-1 before:block before:-skew-x-2 before:-skew-y-2 before:bg-olive-200"
+                >
+                  <span class="relative text-olive-500">Frontend Developer</span
+                  >
+                </span>
+              </b>
             </h1>
           </article>
           <div class="flex gap-x-5">
@@ -55,29 +56,35 @@ import ProjectsCard from "@/components/other/projectsCard.astro";
 
         <div id="projects" class="mb-50 h-dvh scroll-mt-40">
           <article class="pb-5">
-            <h3 class="text-xl">Layihələr</h3>
+            <h2 class="text-3xl">Layihələr</h2>
           </article>
           <ProjectsCard />
         </div>
 
         <div id="experience" class="mb-50 scroll-mt-40">
           <article class="pb-5">
-            <h3 class="text-xl">İş təcrübəm</h3>
+            <h2 class="text-3xl">İş təcrübəm</h2>
           </article>
           <div class="gap-x-10">
-            <ul class="space-y-5 marker:bg-olive-500">
+            <ul
+              class="experience-list list-outside space-y-5 px-4 marker:bg-olive-500 marker:text-olive-500"
+            >
               <li class="transition-all ease-in-out hover:translate-x-1">
-                <a href="#" class="text-xl font-medium">Food2</a>
+                <a href="#" class="text-2xl font-medium">Food2</a>
                 <p class="text-lg">
                   Food2 layihəsində Partnership səhifəsinə və tərcümə hisssəsini
                   hazırladım.
                 </p>
-                <span class="text-olive-500">Noyabr 2025 ‒ Davam edir</span>
+                <span class="text-[1rem] text-olive-500"
+                  >Noyabr 2025 ‒ Davam edir</span
+                >
               </li>
               <li class="transition-all ease-in-out hover:translate-x-1">
-                <a href="#" class="text-xl font-medium">Karyera Z</a>
+                <a href="#" class="pb-20 text-2xl font-medium">Karyera Z</a>
                 <p class="text-lg">Frontend Developer olaraq çalışmışam.</p>
-                <span class="text-olive-500">Sentyabr 2024 ‒ Dekabr 2024</span>
+                <span class="text-[1rem] text-olive-500"
+                  >Sentyabr 2024 ‒ Dekabr 2024</span
+                >
               </li>
             </ul>
           </div>
