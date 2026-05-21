@@ -9,22 +9,25 @@ import {
 } from "../ui/card";
 
 const projectsData = await getCollection("projects");
-
 ---
 
-<div class="flex flex-col gap-y-5 lg:flex-row lg:gap-x-5">
+<div class="flex flex-wrap items-center gap-y-5 lg:gap-x-5">
   {
     projectsData.map((project) => (
-      <Card data-id={project.data.id} className="hover:bg-muted border-border w-full border bg-transparent px-4 py-2 transition-all duration-200 ease-in-out hover:-translate-y-1 hover:shadow-lg lg:w-95">
-        <CardHeader>
-          <CardTitle className="text-lg font-medium text-olive-500">
+      <Card
+        data-id={project.data.id}
+        className="hover:bg-muted border-border w-full h-90
+      border bg-transparent px-4 py-2 transition-all duration-200 ease-in-out hover:-translate-y-1 hover:shadow-lg lg:w-95"
+      >
+        <CardHeader className="pt-5">
+          <CardTitle className="text-2xl font-medium text-olive-500">
             {project.data.title}
           </CardTitle>
         </CardHeader>
-        <CardContent>
-          <p class="text-[1rem] text-neutral-700">{project.data.description}</p>
+        <CardContent className="h-full">
+          <p class="text-lg text-neutral-700">{project.data.description}</p>
         </CardContent>
-        <CardFooter className="flex items-end justify-end gap-x-5">
+        <CardFooter className="content-center justify-center gap-x-5">
           <a
             class={
               project.data.links.github
@@ -50,19 +53,3 @@ const projectsData = await getCollection("projects");
     ))
   }
 </div>
-
-<!-- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random -- Math.random() -->
-<!-- https://www.w3schools.com/jsref/prop_style_transform.asp -- style.transform -->
-
-<script type="module" is:inline>
-
-  const cardread = document.querySelectorAll('[data-id]')
-  // console.log(cardread);
-  cardread.forEach((card) => {
-    localStorage.setItem(card.dataset.id, String(Math.round(Math.random() * (4- -4) + -4)))
-    let getvalue = localStorage.getItem(card.dataset.id)
-    let convertNumber = Number(getvalue)
-    card.style.transform = `rotate(${convertNumber}deg)`
-  })
-  
-</script>
