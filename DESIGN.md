@@ -54,15 +54,16 @@
 
 **Başlıqlar:**
 
-- `<h1>`: text-4xl, font-bold, text-center
-- `<h3>`: text-xl
-- CardTitle: text-lg, font-medium
+- `<h1>`: text-5xl -> (48px), font-bold, text-center
+- `<h2>`: text-3xl -> (30px)
 
 **Mətin:**
 
 - Body: text-xs/relaxed (xəbərdarlıq mətn)
 - Normal: text-[1rem]
-- Card mətin: text-[1rem] text-neutral-700
+- `<a>`: text-[1rem]
+- `<p>`: text-lg
+- `<span>` text-[1rem]
 
 ## Boşluqlar (Spacing)
 
@@ -173,7 +174,7 @@ Gap: gap-1
 ### Card Title
 
 ```
-Font Size: text-lg, font-medium
+Font Size: text-2xl, font-medium
 Color: text-olive-500 (başlıq rəngi)
 ```
 
@@ -182,7 +183,7 @@ Color: text-olive-500 (başlıq rəngi)
 ```
 Padding: px-4
 Text Color: text-neutral-700
-Text Size: text-[1rem]
+Text Size: text-lg
 ```
 
 ### Card Footer
