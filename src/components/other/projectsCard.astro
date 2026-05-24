@@ -16,10 +16,10 @@ const projectsData = await getCollection("projects");
     projectsData.map((project) => (
       <Card
         data-id={project.data.id}
-        className="hover:bg-muted border-border w-full h-90
-      border bg-transparent px-4 py-2 transition-all duration-200 ease-in-out hover:-translate-y-1 hover:shadow-lg lg:w-95"
+        className="hover:bg-muted border-border w-full h-full lg:h-90
+      border bg-transparent px-4 py-5 transition-all duration-200 ease-in-out hover:-translate-y-1 hover:shadow-lg lg:w-95"
       >
-        <CardHeader className="pt-5">
+        <CardHeader>
           <CardTitle className="text-2xl font-medium text-olive-500">
             {project.data.title}
           </CardTitle>
@@ -31,7 +31,7 @@ const projectsData = await getCollection("projects");
           <a
             class={
               project.data.links.github
-                ? "block text-[1rem] underline underline-offset-4"
+                ? "block text-[1rem] text-neutral-800 underline underline-offset-4 transition-all ease-in-out active:scale-95 active:underline"
                 : "hidden"
             }
             href={project.data.links.github}
@@ -41,7 +41,7 @@ const projectsData = await getCollection("projects");
           <a
             class={
               project.data.links.demo
-                ? "block text-[1rem] underline underline-offset-4"
+                ? "block text-[1rem] text-neutral-800 underline underline-offset-4 transition-all ease-in-out active:scale-95 active:underline"
                 : "hidden"
             }
             href={project.data.links.demo}
