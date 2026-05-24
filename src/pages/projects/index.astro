@@ -1,16 +1,56 @@
 ---
-import ProjectsCard from "@/components/other/projectsCard.astro";
+import { Command } from "@lucide/astro";
 import Layout from "@/layouts/layout.astro";
+import { Input } from "@/components/ui/input";
+import { KbdGroup, Kbd } from "@/components/ui/kbd";
+import ProjectsCard from "@/components/other/projectsCard.astro";
+import ProjectsTitle from "@/components/other/projectsTitle.astro";
 ---
 
 <Layout>
   <section class="h-dvh">
     <div class="container mx-auto px-5">
-      <div>
-        <h1>Projects</h1>
-        <input />
+      <div class="mt-10">
+        <article>
+          <ProjectsTitle projects="Layihələr" />
+        </article>
+        <div class="relative mx-auto my-10 flex w-full items-center lg:w-2/5">
+          <Input
+            id="inputKey"
+            className="relative rounded-none text-xl"
+            placeholder="Layihə axtar..."
+          />
+          <KbdGroup className="absolute right-3">
+            <Kbd>Ctrl</Kbd>
+            <span class="text-muted-foreground">/</span>
+            <Kbd><Command /></Kbd>
+            <span class="text-muted-foreground">+</span>
+            <Kbd>K</Kbd>
+          </KbdGroup>
+        </div>
         <ProjectsCard />
       </div>
     </div>
   </section>
 </Layout>
+
+/* https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/ctrlKey -- MDN
+ctrlKey property from examples
+
+https://medium.com/frontend-development-with-js/react-uygulamalar%C4%B1n%C4%B1za-cmd-k-ile-h%C4%B1zl%C4%B1-arama-ekleme-795ac49e4257
+-- Onur Dayıbaşı React Uygulamalarınıza CMD+K ile Hızlı Arama Ekleme
+
+https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/focus -- MDN
+HTMLElement: focus() method */
+
+<script>
+  const inputKey = document.getElementById("inputKey");
+  function keyCommand(e: any) {
+    if ((e.ctrlKey || e.metaKey) && e.key === "k") {
+      e.preventDefault();
+      inputKey?.focus();
+    }
+  }
+
+  document.addEventListener("keydown", keyCommand);
+</script>
