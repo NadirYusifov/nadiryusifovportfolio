@@ -15,7 +15,7 @@ const projectsData = await getCollection("projects");
   {
     projectsData.map((project) => (
       <Card
-        data-id={project.data.id}
+        data-title={project.data.title}
         className="hover:bg-muted border-border w-full h-full lg:h-90
       border bg-transparent px-4 py-5 transition-all duration-200 ease-in-out hover:-translate-y-1 hover:shadow-lg lg:w-95"
       >
