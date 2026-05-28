@@ -24,9 +24,9 @@ import ProjectsTitle from "@/components/other/projectsTitle.astro";
               <b>
                 Mən Nadir Yusifov,
                 <span
-                  class="relative inline-block before:absolute before:-inset-1 before:block before:-skew-x-2 before:-skew-y-2 before:bg-olive-200"
+                  class="text-line relative inline-block before:absolute before:-inset-1 before:block before:-skew-x-2 before:-skew-y-2 before:bg-olive-200"
                 >
-                  <span class="relative text-olive-500">Frontend Developer</span
+                  <span class="hero-title relative text-olive-500">Frontend Developer</span
                   >
                 </span>
               </b>
@@ -101,3 +101,24 @@ import ProjectsTitle from "@/components/other/projectsTitle.astro";
   </section>
   <OtherLink client:visible />
 </Layout>
+
+ <!-- https://gsap.com/community/forums/topic/39684-gsap-astro/ -- GSAP + Astro use -->
+
+<script>
+  import { gsap } from "gsap";
+  import { SplitText } from "gsap/dist/SplitText";
+
+  let split = SplitText.create(".hero-title", {
+    type: "words",
+    linesClass: "line++",
+    autoSplit: true,
+  });
+  gsap.from(split.words, {
+    y: -15,
+    opacity: 0,
+    duration: 0.8,
+    ease: "power2.out",
+    stagger: 0.5,
+    autoAlpha: 0,
+  });
+</script>
