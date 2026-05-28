@@ -1,8 +1,8 @@
 ---
-import { Command } from "@lucide/astro";
+// import { Command } from "@lucide/astro";
 import Layout from "@/layouts/layout.astro";
-import { Input } from "@/components/ui/input";
-import { KbdGroup, Kbd } from "@/components/ui/kbd";
+// import { Input } from "@/components/ui/input";
+// import { KbdGroup, Kbd } from "@/components/ui/kbd";
 import ProjectsCard from "@/components/other/projectsCard.astro";
 import ProjectsTitle from "@/components/other/projectsTitle.astro";
 ---
@@ -14,8 +14,9 @@ import ProjectsTitle from "@/components/other/projectsTitle.astro";
         <article>
           <ProjectsTitle projects="Layihələr" />
         </article>
-        <div class="relative mx-auto my-10 flex w-full items-center lg:w-2/5">
+        <!-- <div class="relative mx-auto my-10 flex w-full items-center lg:w-2/5">
           <Input
+            type="search"
             id="inputKey"
             className="relative rounded-none text-xl"
             placeholder="Layihə axtar..."
@@ -27,30 +28,26 @@ import ProjectsTitle from "@/components/other/projectsTitle.astro";
             <span class="text-muted-foreground">+</span>
             <Kbd>K</Kbd>
           </KbdGroup>
-        </div>
+        </div> -->
         <ProjectsCard />
       </div>
     </div>
   </section>
 </Layout>
 
-/* https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/ctrlKey -- MDN
-ctrlKey property from examples
+/*
+https://medium.com/@filipmalec5555/create-a-simple-search-functionality-using-html-css-js-e9a69d75136e
+-- Medium */
 
-https://medium.com/frontend-development-with-js/react-uygulamalar%C4%B1n%C4%B1za-cmd-k-ile-h%C4%B1zl%C4%B1-arama-ekleme-795ac49e4257
--- Onur Dayıbaşı React Uygulamalarınıza CMD+K ile Hızlı Arama Ekleme
+<!-- <script>
 
-https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/focus -- MDN
-HTMLElement: focus() method */
-
-<script>
   const inputKey = document.getElementById("inputKey");
-  function keyCommand(e: any) {
+  function inputCommand(e: any) {
     if ((e.ctrlKey || e.metaKey) && e.key === "k") {
       e.preventDefault();
       inputKey?.focus();
     }
   }
+  document.addEventListener("keydown", inputCommand);
 
-  document.addEventListener("keydown", keyCommand);
-</script>
+</script> -->
