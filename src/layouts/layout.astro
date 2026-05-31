@@ -1,6 +1,12 @@
 ---
+import { Image } from "astro:assets";
+import NYLogo from "../assets/logo.png";
 import Footer from "./footer/footer.astro";
 ---
+
+<!-- Ortadakı elementi tən ortada saxlamaq üçün AI istifadə etdim.
+Kod: absolute left-1/2 -transalte-x-1/2
+-->
 
 <!doctype html>
 <html lang="en" class="scroll-smooth">
@@ -13,18 +19,34 @@ import Footer from "./footer/footer.astro";
     <title>Nadir Yusifov</title>
   </head>
   <body class="scroll-pt-20">
-    <nav
-      class="border-border sticky top-3 z-20 mx-auto mt-3 flex w-[90%] items-center justify-center space-x-10 border bg-white py-4 text-center lg:w-2/5"
+    <header
+      class="border-border flex items-center sticky top-3 z-20 mx-auto mt-3 w-[90%] border bg-white py-4 lg:w-2/5"
     >
-      <a
-        class="translate-y-0 text-neutral-800 transition-all duration-100 ease-in-out hover:text-olive-500 hover:text-shadow-lg active:scale-95"
-        href="/">Əsas səhifə</a
-      >
-      <a
-        class="translate-y-0 text-neutral-800 transition-all duration-100 ease-in-out hover:text-olive-500 hover:text-shadow-lg active:scale-95"
-        href="/projects">Layihələr</a
-      >
-    </nav>
+      <picture class="pl-5 transition-all duration-100 ease-in-out active:scale-95">
+        <a
+          href="/"
+        >
+          <Image
+            src={NYLogo}
+            width={35}
+            height={35}
+            quality={100}
+            alt="NY logo"
+            class="border-border border"
+          />
+        </a>
+      </picture>
+      <nav class="absolute left-1/2 -translate-x-1/2 text-center">
+        <a
+          class="translate-y-0 text-neutral-800 transition-all duration-100 ease-in-out hover:text-olive-500 hover:text-shadow-lg active:scale-95"
+          href="/">Əsas səhifə</a
+        >
+        <a
+          class="translate-y-0 text-neutral-800 transition-all duration-100 ease-in-out hover:text-olive-500 hover:text-shadow-lg active:scale-95"
+          href="/projects">Layihələr</a
+        >
+      </nav>
+    </header>
     <main>
       <slot />
     </main>
