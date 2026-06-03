@@ -1,0 +1,34 @@
+{
+  "experiences": [
+    {
+      "id": 1,
+      "title": "Food2",
+      "description": "Food2 layihəsində Partnership səhifəsinə və tərcümə hisssəsini hazırladım.",
+      "date": {
+        "startdate": "2025-10-27",
+        "choice": {
+          "discriminant": "countine",
+          "value": "Davam edir"
+        }
+      },
+      "url": {
+        "demo": "https://www.food2.az/"
+      }
+    },
+    {
+      "id": 2,
+      "title": "Karyera Z",
+      "description": "Frontend Developer olaraq çalışmışam.",
+      "date": {
+        "startdate": "2024-06-06",
+        "choice": {
+          "discriminant": "enddate",
+          "value": "2024-12-08"
+        }
+      },
+      "url": {
+        "demo": "https://karyera-az.vercel.app/"
+      }
+    }
+  ]
+}
