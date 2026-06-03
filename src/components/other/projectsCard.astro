@@ -8,42 +8,42 @@ import {
   CardTitle,
 } from "../ui/card";
 
-const projectsData = await getCollection("projects");
+const projectsData = await getCollection("projectsOwn");
 ---
 
 <div class="flex flex-wrap items-center gap-y-5 lg:gap-x-5">
   {
-    projectsData.map((project) => (
+    projectsData.map((item) => (
       <Card
         className="hover:bg-muted border-border w-full h-full lg:h-90
       border bg-transparent px-4 py-5 transition-all duration-200 ease-in-out hover:-translate-y-1 hover:shadow-lg lg:w-95"
       >
         <CardHeader>
           <CardTitle className="text-2xl font-medium text-olive-500">
-            {project.data.title}
+            {item.data.title}
           </CardTitle>
         </CardHeader>
         <CardContent className="h-full">
-          <p class="text-lg text-neutral-700">{project.data.description}</p>
+          <p class="text-lg text-neutral-700">{item.data.description}</p>
         </CardContent>
         <CardFooter className="content-center justify-center gap-x-5">
           <a
             class={
-              project.data.links.github
+              item.data.url?.github
                 ? "block text-[1rem] text-neutral-800 underline underline-offset-4 transition-all ease-in-out active:scale-95 active:underline"
                 : "hidden"
             }
-            href={project.data.links.github}
+            href={item.data.url?.github}
           >
             GitHub
           </a>
           <a
             class={
-              project.data.links.demo
+              item.data.url?.demo
                 ? "block text-[1rem] text-neutral-800 underline underline-offset-4 transition-all ease-in-out active:scale-95 active:underline"
                 : "hidden"
             }
-            href={project.data.links.demo}
+            href={item.data.url?.demo}
           >
             Demo
           </a>
