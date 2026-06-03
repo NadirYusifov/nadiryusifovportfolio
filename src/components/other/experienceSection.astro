@@ -1,0 +1,28 @@
+---
+import { getCollection } from "astro:content";
+
+const experinceData = await getCollection("experincesWork");
+---
+
+<article class="pb-10">
+  <h2 class="text-3xl text-neutral-800">İş təcrübəm</h2>
+</article>
+<div class="gap-x-10">
+  {
+    experinceData.map((item) => (
+      <ul class="experience-list flex list-outside px-4 marker:bg-olive-500 marker:text-olive-500">
+        <li class="transition-all mb-5 ease-in-out hover:translate-x-1">
+            <a href={item.data.url?.demo} class="text-2xl font-medium text-neutral-800">
+            {item.data.title}
+          </a>
+          <p class="text-lg text-neutral-700">
+            {item.data.description}
+          </p>
+          <span class="text-[1rem] text-olive-500 capitalize">
+              {new Intl.DateTimeFormat("az-AZ", {month: "long", year: "numeric"}).format(new Date(item.data.date.startdate))} ‒ {item.data.date.choice.value}
+          </span>
+        </li>
+      </ul>
+    ))
+  }
+</div>
