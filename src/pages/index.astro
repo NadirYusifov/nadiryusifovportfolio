@@ -7,6 +7,7 @@ import Location from "@/components/other/location.astro";
 import { OtherLink } from "@/layouts/otherLinks/otherLinks";
 import ProjectsCard from "@/components/other/projectsCard.astro";
 import ProjectsTitle from "@/components/other/projectsTitle.astro";
+import ExperienceSection from "@/components/other/experienceSection.astro";
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
@@ -26,7 +27,8 @@ import ProjectsTitle from "@/components/other/projectsTitle.astro";
                 <span
                   class="text-line relative inline-block before:absolute before:-inset-1 before:block before:-skew-x-2 before:-skew-y-2 before:bg-olive-200"
                 >
-                  <span class="hero-title relative text-olive-500">Frontend Developer</span
+                  <span class="hero-title relative text-olive-500"
+                    >Frontend Developer</span
                   >
                 </span>
               </b>
@@ -63,38 +65,7 @@ import ProjectsTitle from "@/components/other/projectsTitle.astro";
         </div>
 
         <div id="experience" class="mb-50 scroll-mt-40">
-          <article class="pb-10">
-            <h2 class="text-3xl text-neutral-800">İş təcrübəm</h2>
-          </article>
-          <div class="gap-x-10">
-            <ul
-              class="experience-list list-outside space-y-5 px-4 marker:bg-olive-500 marker:text-olive-500"
-            >
-              <li class="transition-all ease-in-out hover:translate-x-1">
-                <a href="#" class="text-2xl font-medium text-neutral-800"
-                  >Food2</a
-                >
-                <p class="text-lg text-neutral-700">
-                  Food2 layihəsində Partnership səhifəsinə və tərcümə hisssəsini
-                  hazırladım.
-                </p>
-                <span class="text-[1rem] text-olive-500"
-                  >Noyabr 2025 ‒ Davam edir</span
-                >
-              </li>
-              <li class="transition-all ease-in-out hover:translate-x-1">
-                <a href="#" class="pb-20 text-2xl font-medium text-neutral-800"
-                  >Karyera Z</a
-                >
-                <p class="text-lg text-neutral-700">
-                  Frontend Developer olaraq çalışmışam.
-                </p>
-                <span class="text-[1rem] text-olive-500"
-                  >Sentyabr 2024 ‒ Dekabr 2024</span
-                >
-              </li>
-            </ul>
-          </div>
+          <ExperienceSection />
         </div>
       </div>
     </div>
@@ -102,7 +73,7 @@ import ProjectsTitle from "@/components/other/projectsTitle.astro";
   <OtherLink client:visible />
 </Layout>
 
- <!-- https://gsap.com/community/forums/topic/39684-gsap-astro/ -- GSAP + Astro use -->
+<!-- https://gsap.com/community/forums/topic/39684-gsap-astro/ -- GSAP + Astro use -->
 
 <script>
   import { gsap } from "gsap";
