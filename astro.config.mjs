@@ -1,8 +1,12 @@
 // @ts-check
 import tailwindcss from "@tailwindcss/vite";
-import { defineConfig } from "astro/config";
+import { defineConfig, envField } from "astro/config";
 
+import mdx from "@astrojs/mdx";
 import react from "@astrojs/react";
+import keystatic from "@keystatic/astro";
+
+import netlify from "@astrojs/netlify";
 
 // https://astro.build/config
 export default defineConfig({
@@ -10,5 +14,13 @@ export default defineConfig({
     plugins: [tailwindcss()],
   },
 
-  integrations: [react()],
+  env: {
+    schema: {
+      GITHUB_OWNER: envField.string({ context: "client", access: "public" }),
+      GITHUB_REPO: envField.string({ context: "client", access: "public" }),
+    },
+  },
+
+  integrations: [react(), keystatic(), mdx()],
+  adapter: netlify(),
 });
