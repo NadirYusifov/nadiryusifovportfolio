@@ -1,5 +1,5 @@
 import { z } from "astro/zod";
-import { file } from "astro/loaders";
+import { file, glob } from "astro/loaders";
 import { defineCollection } from "astro:content";
 
 const projectsOwn = defineCollection({
@@ -50,4 +50,14 @@ const socialMediaLinks = defineCollection({
   }),
 });
 
-export const collections = { projectsOwn, experincesWork, socialMediaLinks };
+const referancesContent = defineCollection({
+  loader: glob({pattern: "referances.mdx", base: "src/content"}),
+  schema: z.object({
+    title: z.object({
+      name: z.string(),
+      slug: z.string()
+    })
+  }),
+});
+
+export const collections = { projectsOwn, experincesWork, socialMediaLinks, referancesContent };
