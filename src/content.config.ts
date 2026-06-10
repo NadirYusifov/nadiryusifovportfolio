@@ -1,5 +1,5 @@
 import { z } from "astro/zod";
-import { file } from "astro/loaders";
+import { file, glob } from "astro/loaders";
 import { defineCollection } from "astro:content";
 
 const projectsOwn = defineCollection({
@@ -34,9 +34,20 @@ const experincesWork = defineCollection({
       }),
     }),
     url: z.object({
-      demo: z.optional(z.url())
-    })
+      demo: z.optional(z.url()),
+    }),
   }),
 });
 
-export const collections = { projectsOwn, experincesWork };
+const socialMediaLinks = defineCollection({
+  loader: file("src/data/socialMedia.json", {
+    parser: (socialmedia) => JSON.parse(socialmedia).socialMedia
+  }),
+  schema: z.object({
+    id: z.number(),
+    name: z.string(),
+    link: z.url(),
+  }),
+})
+
+export const collections = { projectsOwn, experincesWork, socialMediaLinks };
