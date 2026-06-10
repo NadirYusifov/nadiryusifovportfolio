@@ -41,13 +41,13 @@ const experincesWork = defineCollection({
 
 const socialMediaLinks = defineCollection({
   loader: file("src/data/socialMedia.json", {
-    parser: (socialmedia) => JSON.parse(socialmedia).socialMedia
+    parser: (socialmedia) => JSON.parse(socialmedia).socialMedia,
   }),
   schema: z.object({
     id: z.number(),
     name: z.string(),
     link: z.url(),
   }),
-})
+});
 
 export const collections = { projectsOwn, experincesWork, socialMediaLinks };

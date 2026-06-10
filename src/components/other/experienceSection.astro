@@ -4,10 +4,7 @@ import { getCollection } from "astro:content";
 const experinceData = await getCollection("experincesWork");
 ---
 
-<!-- https://stackoverflow.com/questions/1026069/how-do-i-make-the-first-letter-of-a-string-uppercase-in-javascript -- How do I make the first letter of a string uppercase in JavaScript? -->
-<!-- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat -- Intl.DateTimeFormat from MDN-->
-<!-- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/DateTimeFormat -- Intl.DateTimeFormat() constructor from MDN -->
-
+<!-- https://stackoverflow.com/questions/1026069/how-do-i-make-the-first-letter-of-a-string-uppercase-in-javascript -- How do I make the first letter of a string uppercase in JavaScript? --><!-- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat -- Intl.DateTimeFormat from MDN--><!-- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/DateTimeFormat -- Intl.DateTimeFormat() constructor from MDN -->
 <article class="pb-10">
   <h2 class="text-3xl text-neutral-800">İş təcrübəm</h2>
 </article>
@@ -15,15 +12,20 @@ const experinceData = await getCollection("experincesWork");
   {
     experinceData.map((item) => (
       <ul class="experience-list flex list-outside px-4 marker:bg-olive-500 marker:text-olive-500">
-        <li class="transition-all mb-5 ease-in-out hover:translate-x-1">
-            <a href={item.data.url?.demo} class="text-2xl font-medium text-neutral-800">
+        <li class="mb-5 transition-all ease-in-out hover:translate-x-1">
+          <a
+            href={item.data.url?.demo}
+            class="text-2xl font-medium text-neutral-800"
+          >
             {item.data.title}
           </a>
-          <p class="text-lg text-neutral-700">
-            {item.data.description}
-          </p>
+          <p class="text-lg text-neutral-700">{item.data.description}</p>
           <span class="text-[1rem] text-olive-500 capitalize">
-              {new Intl.DateTimeFormat("az-AZ", {month: "long", year: "numeric"}).format(new Date(item.data.date.startdate))} ‒ {item.data.date.choice.value}
+            {new Intl.DateTimeFormat("az-AZ", {
+              month: "long",
+              year: "numeric",
+            }).format(new Date(item.data.date.startdate))}{" "}
+            ‒ {item.data.date.choice.value}
           </span>
         </li>
       </ul>
