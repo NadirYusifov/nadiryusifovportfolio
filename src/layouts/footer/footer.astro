@@ -1,5 +1,8 @@
 ---
 import "../../styles/global.css";
+import { getCollection } from "astro:content";
+
+const collection = await getCollection("socialMediaLinks");
 ---
 
 <!-- https://www.ionos.com/digitalguide/websites/web-development/html-unordered-lists/ for ul list
@@ -7,50 +10,45 @@ https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/ul
 
 -->
 <footer class="mt-60 mb-5">
-  <div class="mx-4 bg-olive-200 py-10 lg:mx-50">
+  <div class="mx-4 bg-olive-200 h-87.5 py-20 lg:mx-50">
     <div class="container mx-auto px-4">
       <article class="flex justify-center gap-x-10">
-        <ul class="">
+        <ul>
           <li class="text-lg text-neutral-800 underline underline-offset-4">
             Sosial hesaplar
           </li>
           <ul class="pt-2">
-            <li class="transition-all duration-200 ease-in-out hover:pl-1">
-              <a class="text-neutral-800" href="mailto:nadiryusifov70@gmail.com"
-                >Mail</a
-              >
-            </li>
-            <li class="transition-all duration-200 ease-in-out hover:pl-1">
-              <a class="text-neutral-800" href="https://github.com/NadirYusifov"
-                >GitHub</a
-              >
-            </li>
-            <li class="transition-all duration-200 ease-in-out hover:pl-1">
-              <a class="text-neutral-800" href="https://linkedin.com/in/nadir-yusifov/">LinkedIn</a>
-            </li>
+            {
+              collection.map((item) => (
+                <li class="transition-all duration-200 ease-in-out hover:pl-1">
+                  <a class="text-neutral-800" href={item.data.link}>
+                    {item.data.name}
+                  </a>
+                </li>
+              ))
+            }
           </ul>
         </ul>
 
-        <ul class="">
+        <ul>
           <li class="text-lg text-neutral-800 underline underline-offset-4">
             Başqa keçidlər
           </li>
           <ul class="pt-2">
             <li class="transition-all duration-200 ease-in-out hover:pl-1">
-              <a class="text-neutral-800" href="">Referanslar</a>
+              <a class="text-neutral-800" href="/referances">Referanslar</a>
             </li>
           </ul>
         </ul>
       </article>
     </div>
   </div>
-  <article class="flex items-center justify-center pt-3 text-center lg:gap-x-5">
+  <article class="text-center mt-3">
     <p class="text-neutral-700">
       Hazırladı <a
         class="text-olive-500 underline"
         href="https://github.com/NadirYusifov">NadirYusifov</a
       >
     </p>
-    <p class="text-neutral-700">Versiya: Hazırlanma mərhələsindədir.</p>
   </article>
 </footer>
