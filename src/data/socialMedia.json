@@ -1,0 +1,19 @@
+{
+  "socialMedia": [
+    {
+      "id": 1,
+      "name": "Mail",
+      "link": "mailto:nadiryusifov70@gmail.com"
+    },
+    {
+      "id": 2,
+      "name": "LinkedIn",
+      "link": "https://linkedin.com/in/nadir-yusifov/"
+    },
+    {
+      "id": 3,
+      "name": "GitHub",
+      "link": "https://github.com/NadirYusifov/"
+    }
+  ]
+}
