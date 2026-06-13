@@ -17,6 +17,15 @@
         "github": "https://github.com/NadirYusifov/azerbaijan-map",
         "demo": "https://azerbaijanmap.netlify.app"
       }
+    },
+    {
+      "id": 3,
+      "title": "nadiryusifovportfolio",
+      "description": "This is my portfolio web site.",
+      "url": {
+        "github": "https://github.com/NadirYusifov/nadiryusifovportfolio/",
+        "demo": "https://nadiryusifovportfolio.netlify.app/"
+      }
     }
   ]
 }
