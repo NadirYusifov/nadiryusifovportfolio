@@ -16,8 +16,8 @@ export default defineConfig({
 
   env: {
     schema: {
-      GITHUB_OWNER: envField.string({ context: "client", access: "public" }),
-      GITHUB_REPO: envField.string({ context: "client", access: "public" }),
+      REPO_OWNER: envField.string({ context: "client", access: "public" }),
+      REPO_NAME: envField.string({ context: "client", access: "public" }),
     },
   },
 
