@@ -51,13 +51,18 @@ const socialMediaLinks = defineCollection({
 });
 
 const referancesContent = defineCollection({
-  loader: glob({pattern: "referances.mdx", base: "src/content"}),
+  loader: glob({ pattern: "referances.mdx", base: "src/content" }),
   schema: z.object({
     title: z.object({
       name: z.string(),
-      slug: z.string()
-    })
+      slug: z.string(),
+    }),
   }),
 });
 
-export const collections = { projectsOwn, experincesWork, socialMediaLinks, referancesContent };
+export const collections = {
+  projectsOwn,
+  experincesWork,
+  socialMediaLinks,
+  referancesContent,
+};
