@@ -3,7 +3,7 @@ import { file, glob } from "astro/loaders";
 import { defineCollection } from "astro:content";
 
 const projectsOwn = defineCollection({
-  // Nested `.json` documents -- Astro
+  //https://docs.astro.build/en/guides/content-collections/#nested-json-documents -- Nested `.json` documents
   loader: file("src/data/projects.json", {
     parser: (project) => JSON.parse(project).projects,
   }),
