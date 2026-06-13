@@ -1,13 +1,13 @@
 import { config, fields, singleton } from "@keystatic/core";
-// import { GITHUB_OWNER, GITHUB_REPO } from "astro:env/client";
+import { REPO_OWNER, REPO_NAME } from "astro:env/client";
 
 export default config({
   storage: {
-    kind: "local",
-    // repo: {
-    //   owner: `${GITHUB_OWNER}`,
-    //   name: `${GITHUB_REPO}`,
-    // },
+    kind: "github",
+    repo: {
+      owner: `${REPO_OWNER}`,
+      name: `${REPO_NAME}`,
+    },
   },
   ui: {
     brand: {
@@ -123,6 +123,7 @@ export default config({
         title: fields.slug({ name: { label: "Title" } }),
       },
     }),
+    // Social media
     socialmedia: singleton({
       label: "Social Media",
       path: "src/data/socialMedia",
