@@ -1,11 +1,13 @@
 ---
-// import * as referncesContents from "../../content/referances.mdx";
-// import { Content, components } from "../../content/referances.mdx";
+import { render } from "astro:content"
+import { getEntry } from "astro:content"
+
+const entry = await getEntry("referancesContent", "referances")
+const {Content} = await render(entry!);
 ---
 
-<!--
-https://tanggd.github.io/en/guides/markdown-content/#importing-markdown -- Markdown & MDX - Importing Markdown
-https://docs.astro.build/en/guides/integrations-guide/mdx/#using-components-in-mdx -- @astrojs/mdx - Using Components in MDX
- -->
-<!-- <h1>{referncesContents.frontmatter.title.slug}</h1>
-<Content components={{ ...components }} /> -->
+<!-- https://docs.astro.build/en/guides/content-collections/#rendering-body-content -- Astro Content collecyion - Rendering body content  -->
+<!-- Type error solved with Claude Sonnet 4.6 Efforts Low -->
+
+<h1>{entry?.data.title.slug}</h1>
+<Content/>
