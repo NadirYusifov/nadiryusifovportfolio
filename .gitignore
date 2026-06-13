@@ -25,6 +25,3 @@ pnpm-debug.log*
 
 # Local Netlify folder
 .netlify
-
-# Page referance
-src/pages/referances
