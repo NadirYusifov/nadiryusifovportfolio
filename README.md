@@ -1,46 +1,61 @@
-# Astro Starter Kit: Basics
+# nadiryusifovportfolio veb sayt
 
-```sh
-pnpm create astro@latest -- --template basics
-```
+[Astro](https://astro.build) çərçivəsi ilə hazırlanmış portfolio veb saytım. Dizaynı özüm fikirləşmişəm.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+[Hero section image](../src/assets/hero-section.png)
 
-## 🚀 Project Structure
+Layihənin `src` yolunda olan "folder structure" yolu:
+`
+└── src/
+    ├── assets
+    ├── components
+    ├── content
+    ├── data
+    ├── layouts
+    ├── lib
+    ├── pages
+    ├── styles
+    └── content.config.ts
+`
+GitHub-da [bura keçid](https://github.com/NadirYusifov/nadiryusifovportfolio/tree/main/src) edib incələyə bilərsiniz.
 
-Inside of your Astro project, you'll see the following folders and files:
+---
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
-```
+## Layihə haqqında:
+Bu veb sayt [Astro](https://astro.build) çərçivəsi ilə hazırlanıb. Rəsmi olaraq front-end çərçivəsi olaraq [React]() əlavə olunub. Layihə [Netlify](https://www.netlify.com/) vasitəsi ilə deploy edilib. 
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+Əlavə olaraq layihədə istifadə etidyim paketlərə baxmaq istəyirsizsə [Referances](http://nadiryusifovportfolio.netlify.app/referances) hissəsinə keçid edib baxa bilərsiniz.
 
-## 🧞 Commands
+Mətnləri isə [Keystatic](https://keystatic.com/) ilə həll etmişəm sıfırdan Admin UI yazmamışam. Buna **CMS (Content Management System)** deyilir. Yəni iş yerim və layihələrim haqqında məlumatları bununla ilə əlavə edirəm.
 
-All commands are run from the root of the project, from a terminal:
+Sayta çalışdığım qədər **"Supply Chain"** hücumlarına qarşı `pnpm-workspace.yaml` faylı əlavə olunub (Mən özüm [pnpm](https://pnpm.io) paket menecerindən istifadə etmişəm. Siz əgər başqa paket menecerindən istifadə edirsinizsə bu haqqda araşdıra bilərsiniz). Bu haqqında maraqlanırsınızsa ([pnpm](https://pnpm.io) üzərindən) link aşağıda paylaşacam.
 
-| Command                | Action                                           |
-| :--------------------- | :----------------------------------------------- |
-| `pnpm install`         | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
+Qarlaşdığım ciddi problem və bu problem vaxtımı aparıb. Problem odu ki, `src/content/referances.mdx` bir səhifə olaraq ekranda göstərə bilmirdim. Bunu `getEntry()` ilə etdim və bir neçə dəfə `getEntry()` ilə etməyə çalışdım amma ekranda görsənmirdi və xəta mənim özümdə olmuşdu. Etdiyim xəta nə idi, oda `getEntry`-də ikinci gələn dəyər `id` olaraq istəyir. Mən bu `id`-ni `src/content.config.ts` içərisində `defineCollection()` olaraq yazılan və içərisinə schema olaraq içərisinə verdiyim dəyərləri yazırdım.
 
-## 👀 Want to learn more?
+> Qeyd: Layihəmdə həm texniki həm də UI tərəfdən ciddi və ya kiçik problemlər, xətalar ola bilər. Əgər problem, xəta və.s varsa [Issues](https://github.com/NadirYusifov/nadiryusifovportfolio/issues) bölməsindən yaza bilərsiniz.
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+🌐 Demo: http://nadiryusifovportfolio.netlify.app/
+
+## Referanslar:
+- Veb keçidlər:
+  - Astro - https://astro.build/
+  - React - https://react.dev/
+  - @astrojs/react - https://docs.astro.build/en/guides/integrations-guide/react/
+  - Islands architecture - https://docs.astro.build/en/concepts/islands/
+  - Front-end frameworks - https://docs.astro.build/en/guides/framework-components/
+  - Use a CMS with Astro - https://docs.astro.build/en/guides/cms/
+  - @astrojs/netlify - https://docs.astro.build/en/guides/integrations-guide/netlify/
+  - Netlify - https://www.netlify.com/
+  - Keystatic - https://keystatic.com/
+  - pnpm - https://pnpm.io/
+  - @astrojs/mdx - https://docs.astro.build/en/guides/integrations-guide/mdx/
+  - getEntry() - https://docs.astro.build/en/reference/modules/astro-content/#getentry
+  - Content collections - https://docs.astro.build/en/guides/content-collections/
+  - defineCollection() - https://docs.astro.build/en/reference/modules/astro-content/#definecollection
+  - Keystatic & Astro - https://docs.astro.build/en/guides/cms/keystatic/
+  - Mitigating supply chain attacks - https://pnpm.io/supply-chain-security
+  - Settings (pnpm-workspace.yaml) - https://pnpm.io/settings
+- Video keçidlər:
+  - npm installs can hack your laptop (Here's how to stop it) - https://youtu.be/Wq6yMdt11LM?si=7YiqvXUNYfYPeikM
+  - Keystatic with Astro's Content Collections ⚡🚀 - https://youtu.be/6l2YWCyPsWk?si=nBG2MeIugtpeWx6w
+  - Astro Crash Course -
