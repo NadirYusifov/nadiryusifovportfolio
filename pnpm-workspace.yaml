@@ -1,3 +1,23 @@
-minimumReleaseAge: 10080
 allowBuilds:
-  prettier: true
+  "@parcel/watcher": false
+  esbuild: true
+  sharp: false
+
+trustPolicy: no-downgrade
+trustPolicyExclude:
+  - "@netlify/edge-bundler@14.10.3"
+  - "@netlify/serverless-functions-api@2.16.0"
+  - "@netlify/zip-it-and-ship-it@14.7.1"
+  - chokidar@4.0.3 || chokidar@4.0.3
+  - semver@6.3.1 || semver@7.8.3
+
+blockExoticSubdeps: true
+
+minimumReleaseAge: 10080
+minimumReleaseAgeExclude:
+  - "@astrojs/netlify"
+  - astro
+  - "@astrojs/react"
+  - react
+  - react-dom
+  - esbuild
