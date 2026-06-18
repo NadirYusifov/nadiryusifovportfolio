@@ -21,6 +21,6 @@ export default defineConfig({
     },
   },
 
-  integrations: [react(), (process.env.SKIP_KEYSTATIC ? [] : [keystatic()]), mdx()],
+  integrations: [react(), ...(process.env.SKIP_KEYSTATIC ? [] : [keystatic()]), mdx()],
   adapter: netlify(),
 });
