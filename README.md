@@ -1,6 +1,6 @@
 # nadiryusifovportfolio veb sayt
 
-[Astro](https://astro.build) çərçivəsi ilə hazırlanmış portfolio veb saytım. Dizaynı özüm fikirləşmişəm.
+[Astro](https://astro.build) çərçivəsi ilə hazırlanmış portfolio veb saytım.
 
 <img src="src/assets/hero-section.png"/>
 
