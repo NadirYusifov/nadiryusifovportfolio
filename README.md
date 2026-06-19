@@ -60,4 +60,4 @@ http://nadiryusifovportfolio.netlify.app/
 - Video keçidlər:
   - npm installs can hack your laptop (Here's how to stop it) - https://youtu.be/Wq6yMdt11LM?si=7YiqvXUNYfYPeikM
   - Keystatic with Astro's Content Collections ⚡🚀 - https://youtu.be/6l2YWCyPsWk?si=nBG2MeIugtpeWx6w
-  - Astro Crash Course -
+  - Astro Crash Course - https://youtube.com/playlist?list=PL4cUxeGkcC9hXL99yOeCcUrdUee8u36s3&si=1iV6LzcOJrLa7han
