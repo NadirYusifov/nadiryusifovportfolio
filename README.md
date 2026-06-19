@@ -2,10 +2,10 @@
 
 [Astro](https://astro.build) çərçivəsi ilə hazırlanmış portfolio veb saytım. Dizaynı özüm fikirləşmişəm.
 
-[Hero section image](../src/assets/hero-section.png)
+<img src="src/assets/hero-section.png"/>
 
 Layihənin `src` yolunda olan "folder structure" yolu:
-`
+```md
 └── src/
     ├── assets
     ├── components
@@ -16,13 +16,13 @@ Layihənin `src` yolunda olan "folder structure" yolu:
     ├── pages
     ├── styles
     └── content.config.ts
-`
+```
 GitHub-da [bura keçid](https://github.com/NadirYusifov/nadiryusifovportfolio/tree/main/src) edib incələyə bilərsiniz.
 
 ---
 
-## Layihə haqqında:
-Bu veb sayt [Astro](https://astro.build) çərçivəsi ilə hazırlanıb. Rəsmi olaraq front-end çərçivəsi olaraq [React]() əlavə olunub. Layihə [Netlify](https://www.netlify.com/) vasitəsi ilə deploy edilib. 
+## 📄 Layihə haqqında:
+Bu veb sayt [Astro](https://astro.build) çərçivəsi ilə hazırlanıb. Dizaynı özüm fikirləşmişəm. Rəsmi olaraq front-end çərçivəsi olaraq [React](https://react.dev/) əlavə olunub. Layihə [Netlify](https://www.netlify.com/) vasitəsi ilə deploy edilib. 
 
 Əlavə olaraq layihədə istifadə etidyim paketlərə baxmaq istəyirsizsə [Referances](http://nadiryusifovportfolio.netlify.app/referances) hissəsinə keçid edib baxa bilərsiniz.
 
@@ -32,12 +32,14 @@ Sayta çalışdığım qədər **"Supply Chain"** hücumlarına qarşı `pnpm-wo
 
 Qarlaşdığım ciddi problem və bu problem vaxtımı aparıb. Problem odu ki, `src/content/referances.mdx` bir səhifə olaraq ekranda göstərə bilmirdim. Bunu `getEntry()` ilə etdim və bir neçə dəfə `getEntry()` ilə etməyə çalışdım amma ekranda görsənmirdi və xəta mənim özümdə olmuşdu. Etdiyim xəta nə idi, oda `getEntry`-də ikinci gələn dəyər `id` olaraq istəyir. Mən bu `id`-ni `src/content.config.ts` içərisində `defineCollection()` olaraq yazılan və içərisinə schema olaraq içərisinə verdiyim dəyərləri yazırdım.
 
-> Qeyd: Layihəmdə həm texniki həm də UI tərəfdən ciddi və ya kiçik problemlər, xətalar ola bilər. Əgər problem, xəta və.s varsa [Issues](https://github.com/NadirYusifov/nadiryusifovportfolio/issues) bölməsindən yaza bilərsiniz.
+> 📌 Qeyd: Layihəmdə həm texniki həm də UI tərəfdən ciddi və ya kiçik problemlər, xətalar ola bilər. Əgər problem, xəta və.s varsa [Issues](https://github.com/NadirYusifov/nadiryusifovportfolio/issues) bölməsindən yaza bilərsiniz.
 
-🌐 Demo: http://nadiryusifovportfolio.netlify.app/
+## 🌐 Demo
+http://nadiryusifovportfolio.netlify.app/
 
-## Referanslar:
+## 📎 Referanslar:
 - Veb keçidlər:
+  - Tree - https://tree.nathanfriend.com/
   - Astro - https://astro.build/
   - React - https://react.dev/
   - @astrojs/react - https://docs.astro.build/en/guides/integrations-guide/react/
