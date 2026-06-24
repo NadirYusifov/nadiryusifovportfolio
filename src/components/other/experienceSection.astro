@@ -22,10 +22,16 @@ const experinceData = await getCollection("experincesWork");
           <p class="text-lg text-neutral-700">{item.data.description}</p>
           <span class="text-[1rem] text-olive-500 capitalize">
             {new Intl.DateTimeFormat("az-AZ", {
-              month: "long",
+              month: "numeric",
               year: "numeric",
             }).format(new Date(item.data.date.startdate))}{" "}
-            ‒ {item.data.date.choice.value}
+            ‒{" "}
+            {item.data.date.choice.discriminant == "enddate"
+              ? new Intl.DateTimeFormat("az-AZ", {
+                  month: "numeric",
+                  year: "numeric",
+                }).format(new Date(item.data.date.choice.value))
+              : item.data.date.choice.value}
           </span>
         </li>
       </ul>
