@@ -3,10 +3,9 @@ import "../styles/global.css";
 import { ArrowDown } from "@lucide/astro";
 import Layout from "../layouts/layout.astro";
 import { Button } from "@/components/ui/button";
+import Logos from "@/components/other/logos.astro";
 import Location from "@/components/other/location.astro";
 import { OtherLink } from "@/layouts/otherLinks/otherLinks";
-import ProjectsCard from "@/components/other/projectsCard.astro";
-import ProjectsTitle from "@/components/other/projectsTitle.astro";
 import ExperienceSection from "@/components/other/experienceSection.astro";
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
@@ -21,7 +20,7 @@ import ExperienceSection from "@/components/other/experienceSection.astro";
         <div class="flex h-dvh w-full flex-col items-center justify-center">
           <Location />
           <article class="flex flex-col items-center pb-10">
-            <h1 class="text-center text-5xl text-neutral-800">
+            <h1 class="text-center text-4xl lg:text-5xl text-neutral-800">
               <b>
                 Mən Nadir Yusifov,
                 <span
@@ -34,7 +33,7 @@ import ExperienceSection from "@/components/other/experienceSection.astro";
               </b>
             </h1>
           </article>
-          <div class="flex gap-x-5">
+          <div class="flex flex-wrap justify-center gap-y-5 lg:gap-y-0 gap-x-5">
             <!-- https://www.youtube.com/shorts/hbTpbKPmILw -- Easily initiate file downloads with the `download` attribute in HTML -- YouTube channel [https://www.youtube.com/@Steve8708/featured] - Steve (Builder.io) -->
             <a href="/nadiryusifovcv.pdf" download="Nadir Yusifov's CV.pdf">
               <Button
@@ -58,13 +57,29 @@ import ExperienceSection from "@/components/other/experienceSection.astro";
           </div>
         </div>
 
-        <div id="projects" class="mb-50 h-dvh scroll-mt-40">
-          <article class="pb-10">
+        <div id="projects" class="block lg:flex flex-wrap scroll-mt-40 lg:scroll-mt-0 items-center justify-between h-dvh">
+          <!-- <article class="pb-10">
             <ProjectsTitle projects="Layihələr" />
           </article>
-          <ProjectsCard />
+          <ProjectsCard /> -->
+          <div>
+            <article>
+              <h1 class="pb-5 text-4xl lg:text-5xl">Layihələr</h1>
+              <p class="text-lg">Veb sayta toplamda 3 layihə yerləşdirmişəm.</p>
+            </article>
+            <div class="mt-10">
+              <a href="/projects">
+                <Button
+                  className="transtion-all cursor-pointer text-lg text-neutral-800 duration-200 ease-in-out hover:-translate-y-1 hover:shadow-lg"
+                  variant="outline"
+                  size="lg"
+                  type="button">Layihələrə bax</Button
+                >
+              </a>
+            </div>
+          </div>
+          <Logos />
         </div>
-
         <div id="experience" class="mb-50 scroll-mt-40">
           <ExperienceSection />
         </div>
