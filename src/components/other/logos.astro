@@ -1,0 +1,59 @@
+---
+import { Image } from "astro:assets";
+import QRCodeGenerate from "src/assets/logos/qrcodegeneratelogo.png";
+import AzerbaijanMap from "src/assets/logos/azerbaijanmaplogo.png";
+import NadirYusifovPortfolio from "src/assets/logos/nadiryusifovportfoliologo.png";
+
+const logoAssets = [
+  {
+    image: QRCodeGenerate,
+    alt: "QR Code Generate",
+    rotate: 3,
+    width: 60,
+    height: 60,
+    translateX: "-40px",
+  },
+  {
+    image: AzerbaijanMap,
+    alt: "Azerbaijan Map",
+    rotate: -5,
+    width: 130,
+    height: 130,
+    translateX:"-65%",
+  },
+  {
+    image: NadirYusifovPortfolio,
+    alt: "Nadir Yusifov Portfolio",
+    rotate: 3,
+    width: 100,
+    height: 100,
+    translateX: "20px",
+  },
+];
+---
+
+<!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/style -- MDN style HTML global attribute -->
+<!-- https://docs.astro.build/en/reference/astro-syntax/#dynamic-html -- Template expressions referance - Dynamic HTML -->
+
+<div class="grid justify-center items-center max-w-full mt-5 lg:mt-0">
+    {
+      logoAssets.map((item) => (
+        <picture>
+          <Image
+            class="image-translate hover:scale-102 transition-all duration-200 ease-in-out my-5 hover:shadow-lg"
+            style={`transform: translateX(${item.translateX}) rotate(${item.rotate}deg);`}
+            src={item.image}
+            width={item.width}
+            height={item.height}
+            alt={item.alt}
+            title={item.alt}
+          />
+        </picture>
+      ))
+    }
+    <!-- <picture class="space-y-4">
+      <Image class="rotate-2 -translate-x-10" src={QRCodeGenerate} width={130} height={130} alt=""/>
+      <Image class="-translate-x-[90%] -rotate-4" src={AzerbaijanMap} width={110} height={110} alt=""/>
+      <Image class="rotate-1 translate-x-5" src={NadirYusifovPortfolio} width={70} height={70} alt=""/>
+    </picture> -->
+</div>
