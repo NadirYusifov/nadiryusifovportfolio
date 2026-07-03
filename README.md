@@ -35,7 +35,7 @@ Qarlaşdığım ciddi problem və bu problem vaxtımı aparıb. Problem odu ki, 
 > 📌 Qeyd: Layihəmdə həm texniki həm də UI tərəfdən ciddi və ya kiçik problemlər, xətalar ola bilər. Əgər problem, xəta və.s varsa [Issues](https://github.com/NadirYusifov/nadiryusifovportfolio/issues) bölməsindən yaza bilərsiniz.
 
 ## 🌐 Demo
-http://nadiryusifovportfolio.netlify.app/
+https://nadiryusifovportfolio.netlify.app/
 
 ## 📎 Referanslar:
 - Veb keçidlər:
