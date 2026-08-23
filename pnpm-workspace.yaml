@@ -15,6 +15,7 @@ blockExoticSubdeps: true
 
 minimumReleaseAge: 10080
 minimumReleaseAgeExclude:
+  - "@astrojs/mdx"
   - "@astrojs/netlify"
   - astro
   - "@astrojs/react"
