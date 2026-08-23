@@ -6,6 +6,7 @@ const entry = await getEntry("referancesContent", "referances");
 const { Content } = await render(entry!);
 ---
 
-<!-- https://docs.astro.build/en/guides/content-collections/#rendering-body-content -- Astro Content collecyion - Rendering body content  --><!-- Type error solved with Claude Sonnet 4.6 Efforts Low -->
+<!-- https://docs.astro.build/en/guides/content-collections/#rendering-body-content -- Astro Content collecyion - Rendering body content  -->
+<!-- Type error solved with Claude Sonnet 4.6 Efforts Low -->
 <h1>{entry?.data.title.slug}</h1>
 <Content />
