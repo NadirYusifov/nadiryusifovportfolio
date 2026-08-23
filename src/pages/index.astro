@@ -6,16 +6,18 @@ import { Button } from "@/components/ui/button";
 import Logos from "@/components/other/logos.astro";
 import Location from "@/components/other/location.astro";
 import { OtherLink } from "@/layouts/otherLinks/otherLinks";
-import ExperienceSection from "@/components/other/experienceSection.astro";
+import ExperienceSection from "@/components/other/experienceSection.astro"; 
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
-<!-- https://tailwindcss.com/docs/hover-focus-and-other-states#before-and-after --- Highlights effect --><!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/hr --- hr tag style --><!-- https://stackblitz.com/edit/github-q2hjvn-2ow4sj?file=src%2Fpages%2Findex.astro & https://github.com/withastro/astro/issues/8835 Astro shadcn/ui library causes errors  -->
+<!-- https://tailwindcss.com/docs/hover-focus-and-other-states#before-and-after --- Highlights effect -->
+<!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/hr --- hr tag style -->
+<!-- https://stackblitz.com/edit/github-q2hjvn-2ow4sj?file=src%2Fpages%2Findex.astro & https://github.com/withastro/astro/issues/8835 Astro shadcn/ui library causes errors  -->
 <Layout>
   <section>
-    <div class="bg-[url(src/assets/ttten.svg)] bg-no-repeat">
+    <div class="bg-[url(/src/assets/images/ttten.svg)] bg-no-repeat">
       <div class="container mx-auto px-4">
         <div class="flex h-dvh w-full flex-col items-center justify-center">
           <Location />
