@@ -1,17 +1,16 @@
 ---
 import "../styles/global.css";
 import { ArrowDown } from "@lucide/astro";
-import Layout from "../layouts/layout.astro";
+import Layout from "@/layouts/layout.astro";
 import { Button } from "@/components/ui/button";
-import Logos from "@/components/other/logos.astro";
 import Location from "@/components/other/location.astro";
 import { OtherLink } from "@/layouts/otherLinks/otherLinks";
-import ExperienceSection from "@/components/other/experienceSection.astro"; 
+import ProjectSection from "@/components/other/projectSection.astro";
+import ExperienceSection from "@/components/other/experienceSection.astro";
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
-
 <!-- https://tailwindcss.com/docs/hover-focus-and-other-states#before-and-after --- Highlights effect -->
 <!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/hr --- hr tag style -->
 <!-- https://stackblitz.com/edit/github-q2hjvn-2ow4sj?file=src%2Fpages%2Findex.astro & https://github.com/withastro/astro/issues/8835 Astro shadcn/ui library causes errors  -->
@@ -39,7 +38,7 @@ import ExperienceSection from "@/components/other/experienceSection.astro";
             <!-- https://www.youtube.com/shorts/hbTpbKPmILw -- Easily initiate file downloads with the `download` attribute in HTML -- YouTube channel [https://www.youtube.com/@Steve8708/featured] - Steve (Builder.io) -->
             <a href="/nadiryusifovcv.pdf" download="Nadir Yusifov's CV.pdf">
               <Button
-                className="transtion-all cursor-pointer text-lg text-neutral-800 duration-200 ease-in-out hover:-translate-y-1 hover:shadow-lg"
+                className="transtion-all cursor-pointer text-lg text-neutral-800 duration-200 ease-in-out hover:-translate-y-1 hover:shadow-lg active:scale-95"
                 variant="outline"
                 size="lg"
                 type="button">CV-mi yüklə</Button
@@ -47,7 +46,7 @@ import ExperienceSection from "@/components/other/experienceSection.astro";
             </a>
             <a href="mailto:nadiryusifov70@gmail.com">
               <Button
-                className="transtion-all cursor-pointer text-lg text-neutral-800 duration-200 ease-in-out hover:-translate-y-1 hover:shadow-lg"
+                className="transtion-all cursor-pointer text-lg text-neutral-800 duration-200 ease-in-out hover:-translate-y-1 hover:shadow-lg active:scale-95"
                 variant="outline"
                 size="lg"
                 type="button">Maildən yaz</Button
@@ -60,27 +59,7 @@ import ExperienceSection from "@/components/other/experienceSection.astro";
         </div>
 
         <div id="projects" class="block lg:flex flex-wrap scroll-mt-40 lg:scroll-mt-0 items-center justify-between h-dvh">
-          <!-- <article class="pb-10">
-            <ProjectsTitle projects="Layihələr" />
-          </article>
-          <ProjectsCard /> -->
-          <div>
-            <article>
-              <h1 class="pb-5 text-4xl lg:text-5xl">Layihələr</h1>
-              <p class="text-lg">Veb sayta toplamda 3 layihə yerləşdirmişəm.</p>
-            </article>
-            <div class="mt-10">
-              <a href="/projects">
-                <Button
-                  className="transtion-all cursor-pointer text-lg text-neutral-800 duration-200 ease-in-out hover:-translate-y-1 hover:shadow-lg"
-                  variant="outline"
-                  size="lg"
-                  type="button">Layihələrə bax</Button
-                >
-              </a>
-            </div>
-          </div>
-          <Logos />
+          <ProjectSection />
         </div>
         <div id="experience" class="mb-50 scroll-mt-40">
           <ExperienceSection />
