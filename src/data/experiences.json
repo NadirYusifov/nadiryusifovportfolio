@@ -7,8 +7,8 @@
       "date": {
         "startdate": "2025-10-27",
         "choice": {
-          "discriminant": "countine",
-          "value": "Davam edir"
+          "discriminant": "enddate",
+          "value": "2026-08-01"
         }
       },
       "url": {
