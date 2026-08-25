@@ -1,0 +1,21 @@
+---
+import Logos from "./logos.astro";
+import { Button } from "../ui/button";
+---
+<div>
+  <article>
+    <h1 class="pb-5 text-4xl lg:text-5xl">Layihələr</h1>
+    <p class="text-lg">Veb sayta toplamda 3 layihə yerləşdirmişəm.</p>
+  </article>
+  <div class="mt-10">
+    <a href="/projects">
+      <Button
+        className="transtion-all cursor-pointer text-lg text-neutral-800 duration-200 ease-in-out hover:-translate-y-1 hover:shadow-lg active:scale-95"
+        variant="outline"
+        size="lg"
+        type="button">Layihələrə bax</Button
+      >
+    </a>
+  </div>
+</div>
+<Logos />
